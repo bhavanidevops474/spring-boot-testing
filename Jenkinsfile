@@ -12,14 +12,7 @@ pipeline {
         stage('Clean') {
             steps {
                 script {
-                "mvn clean install" 
-            }
-            }
-        }
-        stage('Test') {
-            steps {
-                script {
-                "mvn test"
+                "mvn clean install -U -DskipTests=false" 
             }
             }
         }
