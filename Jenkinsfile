@@ -16,10 +16,10 @@ pipeline {
             }
             }
         }
-        stage('Package') {
+        stage('Test') {
             steps {
                 script {
-                "mvn package -Dmaven.test.skip"
+                "mvn test"
             }
             }
         }
