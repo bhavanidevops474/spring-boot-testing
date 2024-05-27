@@ -16,5 +16,19 @@ pipeline {
             }
             }
         }
+        stage('Package') {
+            steps {
+                script {
+                "mvn package -Dmaven.test.skip"
+            }
+            }
+        }
+        stage('Publish test results') {
+            steps {
+                script {
+                junit "**/target/surefire-reports/*.xml"
+            }
+            }
+        }
     }
 }
